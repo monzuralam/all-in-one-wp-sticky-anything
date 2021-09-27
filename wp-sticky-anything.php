@@ -24,3 +24,16 @@ if (!defined('ABSPATH')) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define('wp-sticky-anything', '1.0.0');
+
+/**
+ * enqueue script
+ */
+if (!function_exists('wp_sticky_anything_scripts')) {
+    function wp_sticky_anything_scripts(){
+        wp_register_script('wp-sticky-anything', plugins_url('assets/js/wp-sticky-anything.js', __FILE__), array('jQuery'), time(),  true);
+        wp_register_script('wp-sticky-main', plugins_url('assets/js/main.js', __FILE__), array(), time(),  true);
+        wp_enqueue_script('wp-sticky-anything');
+        wp_enqueue_script('wp-sticky-main');
+    }
+}
+add_action('wp_enqueue_scripts', 'wp_sticky_anything_scripts');
