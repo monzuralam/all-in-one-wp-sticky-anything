@@ -37,3 +37,14 @@ if (!function_exists('wp_sticky_anything_scripts')) {
     }
 }
 add_action('wp_enqueue_scripts', 'wp_sticky_anything_scripts');
+
+/**
+ * enqueue admin style
+ */
+if (!function_exists('wp_sticky_anything_admin_style')) {
+    function wp_sticky_anything_admin_style(){
+        wp_register_style('wp-sticky-style', plugins_url('assets/css/style.css', __FILE__), false, time(), 'all');
+        wp_enqueue_style('wp-sticky-style');
+    }
+}
+add_action('admin_enqueue_scripts', 'wp_sticky_anything_admin_style');
