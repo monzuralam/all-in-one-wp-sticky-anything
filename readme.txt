@@ -2,7 +2,7 @@
 Contributors: monzuralam
 Tags: sticky, wp-sticky, sticky-anything, sticky menu, sticky header, sticky bar, wpsticky
 Requires at least: 5.0
-Tested up to: 5.8.3
+Tested up to: 5.9
 Requires PHP: 5.6
 Stable Tag: 1.0.0
 License: GPLv2 or later
