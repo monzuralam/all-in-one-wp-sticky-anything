@@ -30,10 +30,13 @@ define('all-in-one-wp-sticky-anything', '1.0.0');
  */
 if (!function_exists('all_in_one_wp_sticky_anything_scripts')) {
     function all_in_one_wp_sticky_anything_scripts(){
-        wp_register_script('all-in-one-wp-sticky-anything', plugins_url('assets/js/all-in-one-wp-sticky-anything.js', __FILE__), array('jquery'), time(),  true);
-        wp_register_script('all-in-one-wp-sticky-main', plugins_url('assets/js/main.js', __FILE__), array(), '1.0.0',  true);
-        wp_enqueue_script('all-in-one-wp-sticky-anything');
-        wp_enqueue_script('all-in-one-wp-sticky-main');
+        wp_enqueue_script('aiowsa', plugins_url('assets/js/all-in-one-wp-sticky-anything.js', __FILE__), array('jquery'), time(),  true);
+        wp_enqueue_script('aiowsa-main', plugins_url('assets/js/main.js', __FILE__), array(), '1.0.0',  true);
+
+        $className = esc_attr(get_option('stickyclass'));
+        wp_localize_script('aiowsa-main','stickyData',array(
+            'classname' =>  $className
+        ));
     }
 }
 add_action('wp_enqueue_scripts', 'all_in_one_wp_sticky_anything_scripts');
@@ -48,3 +51,56 @@ if (!function_exists('all_in_one_wp_sticky_anything_admin_style')) {
     }
 }
 add_action('admin_enqueue_scripts', 'all_in_one_wp_sticky_anything_admin_style');
+
+/**
+ * Settings API
+ */
+if( !function_exists('all_in_one_wp_sticky_anything_option') ){
+    function all_in_one_wp_sticky_anything_option(){
+        add_options_page('All-in-One WP Sticky Anything', 'All-in-One WP Sticky Anything', 'administrator', 'all-in-one-wp-sticky-anything', 'all_in_one_wp_sticky_anything_fields');
+    }
+    add_action('admin_menu', 'all_in_one_wp_sticky_anything_option');
+}
+
+function all_in_one_wp_sticky_anything_fields(){
+?>
+    <div class='wrap'>
+        <h2><?php esc_html_e('All-in-One WP Sticky Anything','all-in-one-wp-sticky-anything'); ?></h2>
+        <form method="post" action="options.php">
+            <?php wp_nonce_field('update-options') ?>
+
+            <table class="form-table" role="presentation">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <label for="stickyclass">
+                                <?php esc_html_e('Sticky Class','all-in-one-wp-sticky-anything'); ?>
+                            </label>
+                        </th>
+                        <td>
+                            <input name="stickyclass" type="text" id="stickyclass" value="<?php echo esc_attr(get_option('stickyclass')); ?>" class="regular-text"><br>
+                            <small><?php esc_html_e('(choose ONE element, e.g. #main-navigation, OR .main-menu-1, OR header nav, etc.)','all-in-one-wp-sticky-anything'); ?></small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="stickyclass"><?php esc_html_e('Default Class','all-in-one-wp-sticky-anything') ?></label>
+                        </th>
+                        <td>
+                            <p><?php esc_html_e('Make anything sticky by use sticky class. example:') ?></p>
+                            <code>
+                                &lt;div class="sticky"&gt;<?php esc_html_e('I am sticky','all-in-one-wp-sticky-anything'); ?>&lt;/div&gt;
+                            </code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><input type="submit" name="Submit" value="Save" class="button button-primary"/></p>
+
+            <input type="hidden" name="action" value="update" />
+            <input type="hidden" name="page_options" value="stickyclass" />
+        </form>
+    </div>
+<?php
+}
