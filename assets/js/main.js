@@ -1,5 +1,7 @@
 jQuery(document).ready(function () {
-    jQuery('.sticky').sticky({
-        offsetY: 90
+    jQuery('.sticky').stickr({
+        duration: 0,
+        offsetTop: 0,
+        offsetBottom: 30
     });
 });
