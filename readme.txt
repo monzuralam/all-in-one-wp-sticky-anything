@@ -8,25 +8,36 @@ Stable Tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-All-in-One WP Sticky Anything plugin will make stick to the side of the page after when scrolled up & down. It also works for header or menu sticky.
+All-in-One WP Sticky Anything on Scroll plugin allows to you make any elements sticky on your website. It also works in Elementor page builder.
 
 
 == Description ==
 
 = All-in-One WP Sticky Anything =
 
-All-in-One WP Sticky Anything On Scroll plugin allows to you make sticky any elements on your website.
+All-in-One WP Sticky Anything on Scroll plugin allows to you make any elements sticky on your website. It also works in Elementor page builder.
 
-It’s great and lightweight. Simply activate the plugin and make sticky anything.
+Sometimes, we stuck making any section sticky in Elementor page builder. Because Sticky is a pro feature in Elementor, not everyone can afford it. Most of the people doesn’t have that kind o budget to buy Elementor pro for this type of tasks. All-in-One WP Sticky Anything plugin offers a free WordPress plugin that helps to make any element sticky in Elementor.
+
+Don’t worry about the extra loading time, it will not cause any issue with site’s speed. We have developed the most lightweight technology, and it is optimized for the best speed score. All you need to do is download it and install. After that simply activate the plugin and make sticky anything.
+
 
 = Features of All-in-One WP Sticky Anything =
-* Quick to set up
-* Any element can stick
-* Easy to use
+* **Quick to Set Up**: It doesn’t require any pro skills to download and install the plugin. You can download itself and install it on your WordPress dashboard.
+* **Any Element Can Be Made Sticky**: The user can make any element sticky by using this plugin. When you want to create an element sticky, just pick CSS class name, class id, or CSS selector.
+* **Blazing Fast**: Make anything sticky element in one or less time.
+* **Works with Everything**: All-in-One Sticky Plugin is compatible with most common themes, page builder’s plugin. We have tested it for many times and perfected it for you. It is perfectly working in Elementor page builder.
+* **Easy to use**: There are no complex settings for using it. You just pick class name or id and place it into fields and save it. There are other ways to sticky just use sticky class.
+
+= Benefits of All-in-One WP Sticky Anything =
+* The sticky sidebar will help your visitors navigate easily.
+* User Experience Improvement
 
 = How to use ? =
 Just use sticky class to sticky anything.
 Example: `<div class="sticky">I am stikcy</div>`
+
+There are lots of features coming soon. We are updating it regularly. If you fetch any kind of problem just use the support feature. We will update solving you issues as soon as possible.
 
 == Installation ==
 
@@ -36,7 +47,6 @@ Example: `<div class="sticky">I am stikcy</div>`
 
 == Screenshots ==
 
-1. Settings 
 
 == Frequently Asked Questions ==
 
@@ -51,6 +61,10 @@ Just use .sticky class.
 = Will All-in-One WP Sticky Anything slow down my website? =
 
 No.
+
+= How to disable the sticky?
+
+Just remove class from settings.
 
 = I need more help please! =
 
